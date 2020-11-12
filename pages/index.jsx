@@ -1,5 +1,7 @@
-import Head from 'next/head';
-import styles from './index.module.scss';
+import Head from "next/head";
+import MapBox from "../components/MapBox";
+import SearchBox from "../components/SearchBox";
+import styles from "./index.module.scss";
 
 export default function Home() {
   return (
@@ -15,12 +17,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>IP - Info</h1>
+        <div className={styles.heading}>
+          <h1>IP - Info</h1>
+        </div>
+
+        <SearchBox />
+        <MapBox />
       </main>
     </div>
   );
 }
-
-export const getStaticProps = () => {
-  
-};
