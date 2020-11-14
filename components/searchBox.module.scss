@@ -7,12 +7,13 @@
   & input {
     margin-right: 1.2rem;
     font-size: 1.5rem;
-    padding: 3px;
-    box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.4);
+    padding: 0.5rem 1.5rem;
+    // box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.4);
 
     &:focus {
       outline: none;
-      box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.7);
+      border: 2px solid teal;
+      // box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.7);
     }
   }
 
@@ -20,13 +21,13 @@
     font-size: 1.5rem;
     background-color: teal;
     color: white;
-    padding: 3px;
+    padding: 0.5rem 1.5rem;
     border: 0;
-    box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.4);
+    // box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.4);
 
     &:hover {
       cursor: pointer;
-      box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.7);
+      // box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.7);
     }
   }
 }

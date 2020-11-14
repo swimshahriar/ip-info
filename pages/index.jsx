@@ -1,9 +1,13 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import MapBox from "../components/MapBox";
 import SearchBox from "../components/SearchBox";
 import styles from "./index.module.scss";
 
 export default function Home() {
+  const [ipAddress, setIpAddress] = useState("24.48.0.1");
+  const [ipInfo, setIpInfo] = useState(null);
+
   return (
     <div>
       <Head>
@@ -21,7 +25,11 @@ export default function Home() {
           <h1>IP - Info</h1>
         </div>
 
-        <SearchBox />
+        <SearchBox
+          ipAddress={ipAddress}
+          setIpAddress={setIpAddress}
+          handleApiRequest={handleApiRequest}
+        />
         <MapBox />
       </main>
     </div>
