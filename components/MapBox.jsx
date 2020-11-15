@@ -17,7 +17,7 @@ const MapBox = ({ lat, lon }) => {
     map.addControl(new mapboxgl.NavigationControl());
     // marker
     const marker = new mapboxgl.Marker().setLngLat([lon, lat]).addTo(map);
-  }, []);
+  }, [lat, lon]);
 
   return <div id="mapbox" className={styles.mapbox}></div>;
 };
