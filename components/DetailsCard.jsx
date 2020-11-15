@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import styles from "./DetailsCard.module.scss";
 
 const DetailsCard = ({ countryCode, city, isp, timezone }) => {
   return (
-    <div className={styles.infoContainer}>
+    <motion.div
+      className={styles.infoContainer}
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: -100, opacity: 0 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
       <div>
         <p>
           <span>COUNTRY: </span>
@@ -25,7 +31,7 @@ const DetailsCard = ({ countryCode, city, isp, timezone }) => {
           {timezone}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,11 +1,18 @@
 import React from "react";
+import { motion, transform } from "framer-motion";
 
 import styles from "./searchBox.module.scss";
 
 const SearchBox = ({ ipAddress, setIpAddress, handleApiRequest }) => {
   return (
     <div>
-      <form className={styles.form} onSubmit={handleApiRequest}>
+      <motion.form
+        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: -100, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className={styles.form}
+        onSubmit={handleApiRequest}
+      >
         <input
           type="text"
           placeholder="199.158.118.113"
@@ -13,7 +20,7 @@ const SearchBox = ({ ipAddress, setIpAddress, handleApiRequest }) => {
           onChange={(event) => setIpAddress(event.target.value)}
         />
         <button>Search</button>
-      </form>
+      </motion.form>
     </div>
   );
 };

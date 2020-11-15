@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+import { motion } from "framer-motion";
 
 import styles from "./mapbox.module.scss";
 
@@ -19,7 +20,15 @@ const MapBox = ({ lat, lon }) => {
     const marker = new mapboxgl.Marker().setLngLat([lon, lat]).addTo(map);
   }, [lat, lon]);
 
-  return <div id="mapbox" className={styles.mapbox}></div>;
+  return (
+    <motion.div
+      id="mapbox"
+      className={styles.mapbox}
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: -100, opacity: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    ></motion.div>
+  );
 };
 
 export default MapBox;
