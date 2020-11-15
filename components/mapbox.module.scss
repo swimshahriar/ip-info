@@ -3,4 +3,8 @@
   width: 80vw;
   margin: 5px auto;
   border: 2px solid teal;
+
+  @media screen and (max-width: 500px) {
+    width: 90vw;
+  }
 }
