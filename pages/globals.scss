@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 62.5%;
   background: rgb(161, 209, 194);
   background: radial-gradient(

@@ -8,18 +8,12 @@ import styles from "./index.module.scss";
 import DetailsCard from "../components/DetailsCard";
 
 export default function Home({
-  country,
   countryCode,
-  region,
-  regionName,
   city,
-  zip,
   lat,
   lon,
   timezone,
   isp,
-  org,
-  as,
   query,
 }) {
   const router = useRouter();
@@ -46,19 +40,27 @@ export default function Home({
         <div className={styles.heading}>
           <h1>IP - Info</h1>
         </div>
-
         <SearchBox
           ipAddress={ipAddress}
           setIpAddress={setIpAddress}
           handleApiRequest={handleApiRequest}
         />
-        <DetailsCard
-          countryCode={countryCode}
-          city={city}
-          isp={isp}
-          timezone={timezone}
-        />
-        <MapBox lon={lon} lat={lat} />
+
+        {!countryCode && !isp ? (
+          <h1 className={styles.errorMsg}>
+            Try Again, Something Went Wrong! :(
+          </h1>
+        ) : (
+          <>
+            <DetailsCard
+              countryCode={countryCode}
+              city={city}
+              isp={isp}
+              timezone={timezone}
+            />
+            <MapBox lon={lon} lat={lat} />
+          </>
+        )}
       </main>
     </div>
   );
@@ -66,36 +68,41 @@ export default function Home({
 
 export const getStaticProps = async () => {
   const res = await fetch("http://ip-api.com/json/24.48.0.1");
-  const {
-    country,
-    countryCode,
-    region,
-    regionName,
-    city,
-    zip,
-    lat,
-    lon,
-    timezone,
-    isp,
-    org,
-    as,
-    query,
-  } = await res.json();
-  return {
-    props: {
-      country,
+  const ipData = await res.json();
+
+  let propsData = {
+    countryCode: null,
+    regionName: null,
+    city: null,
+    lat: null,
+    lon: null,
+    timezone: null,
+    isp: null,
+    query: null,
+  };
+  if (ipData.status !== "fail") {
+    const {
       countryCode,
-      region,
       regionName,
       city,
-      zip,
       lat,
       lon,
       timezone,
       isp,
-      org,
-      as,
       query,
-    },
+    } = ipData;
+    propsData = {
+      countryCode,
+      regionName,
+      city,
+      lat,
+      lon,
+      timezone,
+      isp,
+      query,
+    };
+  }
+  return {
+    props: propsData,
   };
 };

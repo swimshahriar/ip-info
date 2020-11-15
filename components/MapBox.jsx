@@ -10,7 +10,7 @@ const MapBox = ({ lat, lon }) => {
       container: "mapbox",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [lon, lat],
-      zoom: 12,
+      zoom: 14,
     });
 
     // control panel
