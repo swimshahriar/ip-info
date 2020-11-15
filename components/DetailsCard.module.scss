@@ -1,0 +1,19 @@
+.infoContainer {
+  background-color: teal;
+  width: 80vw;
+  margin: 5px auto;
+  font-size: 1.2rem;
+  color: white;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  p {
+    margin: 1rem;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

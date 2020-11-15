@@ -7,13 +7,12 @@
   & input {
     margin-right: 1.2rem;
     font-size: 1.5rem;
+    color: rgb(0, 0, 0, 0.7);
     padding: 0.5rem 1.5rem;
-    // box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.4);
 
     &:focus {
       outline: none;
       border: 2px solid teal;
-      // box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.7);
     }
   }
 
@@ -23,11 +22,9 @@
     color: white;
     padding: 0.5rem 1.5rem;
     border: 0;
-    // box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.4);
 
     &:hover {
       cursor: pointer;
-      // box-shadow: 0.3rem 0.5rem 1rem rgb(0, 0, 0, 0.7);
     }
   }
 }
