@@ -30,4 +30,4 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 ### Environment Variables
 
-You can get the `NEXT_PUBLIC_MAPBOX_API_KEY` from [www.mapbox.com](https://www.mapbox.com/). Map will not work, if no the variable is empty. Replace your api key with `NEXT_PUBLIC_MAPBOX_API_KEY` in **components/MapBox.jsx**.
+You can get the `NEXT_PUBLIC_MAPBOX_API_KEY` from [www.mapbox.com](https://www.mapbox.com/). Map will not work, if the variable is empty. Replace your api key with `NEXT_PUBLIC_MAPBOX_API_KEY` in **components/MapBox.jsx**.
